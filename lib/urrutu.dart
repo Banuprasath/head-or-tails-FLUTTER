@@ -14,13 +14,13 @@ class DiceRoller extends StatefulWidget {
 }
 
 class _DiceRollerState extends State<DiceRoller> {
-  var currentDiceRoll = 1;
+  var currentDiceRoll = 2;
 
   void runer() {
     /*var dicerolluhh = Random().nextInt(6) + 1;
               print(dicerolluhh);*/
     setState(() {
-      currentDiceRoll = randomizer.nextInt(2) + 1;
+      currentDiceRoll = randomizer.nextInt(6) + 1;
       print(currentDiceRoll);
     });
   }
@@ -29,10 +29,10 @@ class _DiceRollerState extends State<DiceRoller> {
   Widget build(BuildContext context) {
     if (currentDiceRoll == 1) {
       print("True");
-      flipval1 = "Heads";
+      flipval1 = "Tails";
       print(flipval1);
     } else {
-      flipval1 = "Tail!..";
+      flipval1 = "Heads";
     }
     // TODO: implement build
     return Column(
@@ -43,20 +43,28 @@ class _DiceRollerState extends State<DiceRoller> {
           width: 200,
         ),
         SizedBox(
-            width: 70,
-            height: 50,
+          width: 70,
+          height: 50,
+          child: Align(
+            alignment: Alignment.center,
             child: Text(
               flipval1,
-              style: TextStyle(fontSize: 24, color: Colors.red),
-            )),
+              style: TextStyle(
+                  fontSize: 22,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
         ElevatedButton(
             onPressed: runer,
             style: ElevatedButton.styleFrom(
-              padding: const EdgeInsets.all(5),
+              //padding: const EdgeInsets.all(),
+              backgroundColor: Colors.black,
               foregroundColor: Colors.white,
-              textStyle: const TextStyle(fontSize: 28),
+              textStyle: const TextStyle(fontSize: 26),
             ),
-            child: const Text("Roll"))
+            child: const Text("Flip"))
       ],
     );
   }

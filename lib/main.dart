@@ -12,8 +12,8 @@ void main() {
 
 class GradientContainer extends StatelessWidget {
   GradientContainer({super.key});
-
-  var activeDiceImage = 'asserts/dice-1.png';
+  //var activeDiceImage = 'asserts/v.png';
+  var activeDiceImage = 'asserts/dice-2.png';
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -22,8 +22,8 @@ class GradientContainer extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Color.fromARGB(255, 204, 43, 94),
-            Color.fromARGB(255, 117, 58, 136)
+            Color.fromARGB(255, 33, 147, 176),
+            Color.fromARGB(255, 109, 213, 237)
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
